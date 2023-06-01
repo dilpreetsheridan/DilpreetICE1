@@ -23,31 +23,24 @@ public class CardTrick {
             c.setSuit(Card.SUITS[random.nextInt(4)]);
             magicHand[i] = c;
         }
-         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter value of the card (1-13): ");
-        int usrCardValue = scanner.nextInt();
-        scanner.nextLine(); 
-        System.out.print("Enter suit of the card (Hearts, Diamonds, Spades, Clubs): ");
-        String usrCardSuit = scanner.nextLine();
-
-        Card userCard = new Card();
-        userCard.setValue(usrCardValue);
-        userCard.setSuit(usrCardSuit);
+       
+        Card luckyCard = new Card();
+        luckyCard.setValue(5);
+        luckyCard.setSuit("Hearts");
 
         boolean found = false;
         for (Card card : magicHand) {
-            if (card.getValue() == userCard.getValue() && card.getSuit().equals(userCard.getSuit())) {
+            if (card.getValue() == luckyCard.getValue() && card.getSuit().equals(luckyCard.getSuit())) {
                 found = true;
                 break;
             }
         }
 
         if (found) {
-            System.out.println("Card found ");
+            System.out.println("lucky card found");
         } else {
-            System.out.println("Card not found ");
-        }
-       
+            System.out.println(" card not found.");
+        }       
     }
     
 }
